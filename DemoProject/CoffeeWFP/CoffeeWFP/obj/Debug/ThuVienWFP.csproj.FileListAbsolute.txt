@@ -1,0 +1,35 @@
+c:\users\huy toan\documents\visual studio 2013\Projects\CoffeeWFP\CoffeeWFP\bin\Debug\CoffeeWFP.exe.config
+c:\users\huy toan\documents\visual studio 2013\Projects\CoffeeWFP\CoffeeWFP\bin\Debug\CoffeeWFP.exe
+c:\users\huy toan\documents\visual studio 2013\Projects\CoffeeWFP\CoffeeWFP\bin\Debug\CoffeeWFP.pdb
+c:\users\huy toan\documents\visual studio 2013\Projects\CoffeeWFP\CoffeeWFP\bin\Debug\EntityFramework.dll
+c:\users\huy toan\documents\visual studio 2013\Projects\CoffeeWFP\CoffeeWFP\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\huy toan\documents\visual studio 2013\Projects\CoffeeWFP\CoffeeWFP\bin\Debug\EntityFramework.xml
+c:\users\huy toan\documents\visual studio 2013\Projects\CoffeeWFP\CoffeeWFP\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\huy toan\documents\visual studio 2013\Projects\CoffeeWFP\CoffeeWFP\obj\Debug\CoffeeWFP.Frmsach.resources
+c:\users\huy toan\documents\visual studio 2013\Projects\CoffeeWFP\CoffeeWFP\obj\Debug\CoffeeWFP.Properties.Resources.resources
+c:\users\huy toan\documents\visual studio 2013\Projects\CoffeeWFP\CoffeeWFP\obj\Debug\ThuVienWFP.csproj.GenerateResource.Cache
+c:\users\huy toan\documents\visual studio 2013\Projects\CoffeeWFP\CoffeeWFP\obj\Debug\CoffeeWFP.exe
+c:\users\huy toan\documents\visual studio 2013\Projects\CoffeeWFP\CoffeeWFP\obj\Debug\CoffeeWFP.pdb
+C:\Users\Huy Toan\Documents\Visual Studio 2013\Projects\CoffeeWFP\CoffeeWFP\obj\Debug\CoffeeWFP.FrmDocGia.resources
+C:\Users\Huy Toan\Documents\Visual Studio 2013\Projects\CoffeeWFP\CoffeeWFP\obj\Debug\CoffeeWFP.FrmMain.resources
+C:\Users\Huy Toan\Documents\Visual Studio 2013\Projects\CoffeeWFP\CoffeeWFP\obj\Debug\ThuVienWFP.csprojResolveAssemblyReference.cache
+C:\Users\Huy Toan\Documents\Visual Studio 2013\Projects\CoffeeWFP\CoffeeWFP\obj\Debug\CoffeeWFP.FrmLogin.resources
+C:\Users\Huy Toan\Documents\Visual Studio 2013\Projects\CoffeeWFP\CoffeeWFP\obj\Debug\CoffeeWFP.FrmLoaiSach.resources
+C:\Users\Huy Toan\Documents\Visual Studio 2013\Projects\CoffeeWFP\CoffeeWFP\obj\Debug\CoffeeWFP.FrmBangChon.resources
+G:\GitProject\MyProject\CoffeeWFP\CoffeeWFP\bin\Debug\CoffeeWFP.exe.config
+G:\GitProject\MyProject\CoffeeWFP\CoffeeWFP\obj\Debug\CoffeeWFP.exe
+G:\GitProject\MyProject\CoffeeWFP\CoffeeWFP\obj\Debug\CoffeeWFP.pdb
+G:\GitProject\MyProject\CoffeeWFP\CoffeeWFP\obj\Debug\CoffeeWFP.FrmDocGia.resources
+G:\GitProject\MyProject\CoffeeWFP\CoffeeWFP\obj\Debug\CoffeeWFP.FrmLoaiSach.resources
+G:\GitProject\MyProject\CoffeeWFP\CoffeeWFP\obj\Debug\CoffeeWFP.FrmLogin.resources
+G:\GitProject\MyProject\CoffeeWFP\CoffeeWFP\obj\Debug\CoffeeWFP.FrmMain.resources
+G:\GitProject\MyProject\CoffeeWFP\CoffeeWFP\obj\Debug\CoffeeWFP.Frmsach.resources
+G:\GitProject\MyProject\CoffeeWFP\CoffeeWFP\obj\Debug\CoffeeWFP.Properties.Resources.resources
+G:\GitProject\MyProject\CoffeeWFP\CoffeeWFP\obj\Debug\ThuVienWFP.csproj.GenerateResource.Cache
+G:\GitProject\MyProject\CoffeeWFP\CoffeeWFP\bin\Debug\CoffeeWFP.exe
+G:\GitProject\MyProject\CoffeeWFP\CoffeeWFP\bin\Debug\CoffeeWFP.pdb
+G:\GitProject\MyProject\CoffeeWFP\CoffeeWFP\bin\Debug\EntityFramework.dll
+G:\GitProject\MyProject\CoffeeWFP\CoffeeWFP\bin\Debug\EntityFramework.SqlServer.dll
+G:\GitProject\MyProject\CoffeeWFP\CoffeeWFP\bin\Debug\EntityFramework.xml
+G:\GitProject\MyProject\CoffeeWFP\CoffeeWFP\bin\Debug\EntityFramework.SqlServer.xml
+G:\GitProject\MyProject\CoffeeWFP\CoffeeWFP\obj\Debug\ThuVienWFP.csprojResolveAssemblyReference.cache

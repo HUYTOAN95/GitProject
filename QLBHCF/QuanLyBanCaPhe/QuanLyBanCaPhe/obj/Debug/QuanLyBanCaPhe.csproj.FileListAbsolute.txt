@@ -1,0 +1,17 @@
+G:\GitProject\MyProject\QLBHCF\QuanLyBanCaPhe\QuanLyBanCaPhe\bin\Debug\Report\NhanVien.rpt
+G:\GitProject\MyProject\QLBHCF\QuanLyBanCaPhe\QuanLyBanCaPhe\bin\Debug\Report\NhanVien.cs
+G:\GitProject\MyProject\QLBHCF\QuanLyBanCaPhe\QuanLyBanCaPhe\bin\Debug\QuanLyBanCaPhe.exe.config
+G:\GitProject\MyProject\QLBHCF\QuanLyBanCaPhe\QuanLyBanCaPhe\bin\Debug\QuanLyBanCaPhe.exe
+G:\GitProject\MyProject\QLBHCF\QuanLyBanCaPhe\QuanLyBanCaPhe\bin\Debug\QuanLyBanCaPhe.pdb
+G:\GitProject\MyProject\QLBHCF\QuanLyBanCaPhe\QuanLyBanCaPhe\bin\Debug\EntityFramework.dll
+G:\GitProject\MyProject\QLBHCF\QuanLyBanCaPhe\QuanLyBanCaPhe\bin\Debug\EntityFramework.xml
+G:\GitProject\MyProject\QLBHCF\QuanLyBanCaPhe\QuanLyBanCaPhe\obj\Debug\QuanLyBanCaPhe.frmhoadon.resources
+G:\GitProject\MyProject\QLBHCF\QuanLyBanCaPhe\QuanLyBanCaPhe\obj\Debug\QuanLyBanCaPhe.frmlogin.resources
+G:\GitProject\MyProject\QLBHCF\QuanLyBanCaPhe\QuanLyBanCaPhe\obj\Debug\QuanLyBanCaPhe.frmmain.resources
+G:\GitProject\MyProject\QLBHCF\QuanLyBanCaPhe\QuanLyBanCaPhe\obj\Debug\QuanLyBanCaPhe.frmnhanvien.resources
+G:\GitProject\MyProject\QLBHCF\QuanLyBanCaPhe\QuanLyBanCaPhe\obj\Debug\QuanLyBanCaPhe.frmnsd.resources
+G:\GitProject\MyProject\QLBHCF\QuanLyBanCaPhe\QuanLyBanCaPhe\obj\Debug\QuanLyBanCaPhe.frmreportviewer.resources
+G:\GitProject\MyProject\QLBHCF\QuanLyBanCaPhe\QuanLyBanCaPhe\obj\Debug\QuanLyBanCaPhe.Properties.Resources.resources
+G:\GitProject\MyProject\QLBHCF\QuanLyBanCaPhe\QuanLyBanCaPhe\obj\Debug\QuanLyBanCaPhe.csproj.GenerateResource.Cache
+G:\GitProject\MyProject\QLBHCF\QuanLyBanCaPhe\QuanLyBanCaPhe\obj\Debug\QuanLyBanCaPhe.exe
+G:\GitProject\MyProject\QLBHCF\QuanLyBanCaPhe\QuanLyBanCaPhe\obj\Debug\QuanLyBanCaPhe.pdb

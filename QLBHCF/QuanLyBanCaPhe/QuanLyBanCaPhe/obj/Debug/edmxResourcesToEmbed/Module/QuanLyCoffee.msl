@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CoffeManagerProjectModelStoreContainer" CdmEntityContainer="CoffeManagerProjectEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="CoffeManagerProjectModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ChitietHD">
+      <EntityTypeMapping TypeName="CoffeManagerProjectModel.tbl_ChitietHD">
+        <MappingFragment StoreEntitySet="tbl_ChitietHD">
+          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+          <ScalarProperty Name="KhuyenMai" ColumnName="KhuyenMai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_HoaDon">
+      <EntityTypeMapping TypeName="CoffeManagerProjectModel.tbl_HoaDon">
+        <MappingFragment StoreEntitySet="tbl_HoaDon">
+          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="CaSo" ColumnName="CaSo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_NgSD">
+      <EntityTypeMapping TypeName="CoffeManagerProjectModel.tbl_NgSD">
+        <MappingFragment StoreEntitySet="tbl_NgSD">
+          <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="QuyenTruyCap" ColumnName="QuyenTruyCap" />
+          <ScalarProperty Name="NgayDangKi" ColumnName="NgayDangKi" />
+          <ScalarProperty Name="NgayHetHan" ColumnName="NgayHetHan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_NhanVien">
+      <EntityTypeMapping TypeName="CoffeManagerProjectModel.tbl_NhanVien">
+        <MappingFragment StoreEntitySet="tbl_NhanVien">
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ThucDon">
+      <EntityTypeMapping TypeName="CoffeManagerProjectModel.tbl_ThucDon">
+        <MappingFragment StoreEntitySet="tbl_ThucDon">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="DVT" ColumnName="DVT" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_BaoCaoHoaDon">
+      <EntityTypeMapping TypeName="CoffeManagerProjectModel.View_BaoCaoHoaDon">
+        <MappingFragment StoreEntitySet="View_BaoCaoHoaDon">
+          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="KhuyenMai" ColumnName="KhuyenMai" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+          <ScalarProperty Name="CaSo" ColumnName="CaSo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_CTHD_HD">
+      <EntityTypeMapping TypeName="CoffeManagerProjectModel.View_CTHD_HD">
+        <MappingFragment StoreEntitySet="View_CTHD_HD">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Tên_Món" ColumnName="Tên Món" />
+          <ScalarProperty Name="Số_Lượng" ColumnName="Số Lượng" />
+          <ScalarProperty Name="Đơn_Giá" ColumnName="Đơn Giá" />
+          <ScalarProperty Name="Giảm_Giá" ColumnName="Giảm Giá" />
+          <ScalarProperty Name="Thành_Tiền" ColumnName="Thành Tiền" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_ChiTietHD">
+      <EntityTypeMapping TypeName="CoffeManagerProjectModel.View_ChiTietHD">
+        <MappingFragment StoreEntitySet="View_ChiTietHD">
+          <ScalarProperty Name="Mã_Hóa_Đơn" ColumnName="Mã Hóa Đơn" />
+          <ScalarProperty Name="Sản_Phẩm" ColumnName="Sản Phẩm" />
+          <ScalarProperty Name="Số_Lượng" ColumnName="Số Lượng" />
+          <ScalarProperty Name="Đơn_Giá" ColumnName="Đơn Giá" />
+          <ScalarProperty Name="Thành_Tiền" ColumnName="Thành Tiền" />
+          <ScalarProperty Name="Khuyến_Mãi" ColumnName="Khuyến Mãi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_HD_NV">
+      <EntityTypeMapping TypeName="CoffeManagerProjectModel.View_HD_NV">
+        <MappingFragment StoreEntitySet="View_HD_NV">
+          <ScalarProperty Name="Mã_Hóa_Đơn" ColumnName="Mã Hóa Đơn" />
+          <ScalarProperty Name="Mã_Nhân_Viên" ColumnName="Mã Nhân Viên" />
+          <ScalarProperty Name="Tên_Nhân_Viên" ColumnName="Tên Nhân Viên" />
+          <ScalarProperty Name="Ngày_Cập_Nhật" ColumnName="Ngày Cập Nhật" />
+          <ScalarProperty Name="Ca_Số" ColumnName="Ca Số" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_HoaDon">
+      <EntityTypeMapping TypeName="CoffeManagerProjectModel.View_HoaDon">
+        <MappingFragment StoreEntitySet="View_HoaDon">
+          <ScalarProperty Name="Mã_Hóa_Đơn" ColumnName="Mã Hóa Đơn" />
+          <ScalarProperty Name="Mã_Nhân_Viên" ColumnName="Mã Nhân Viên" />
+          <ScalarProperty Name="Ngày_Cập_Nhật" ColumnName="Ngày Cập Nhật" />
+          <ScalarProperty Name="Ca_Số" ColumnName="Ca Số" />
+          <ScalarProperty Name="Tổng_Tiền" ColumnName="Tổng Tiền" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_NgSD">
+      <EntityTypeMapping TypeName="CoffeManagerProjectModel.View_NgSD">
+        <MappingFragment StoreEntitySet="View_NgSD">
+          <ScalarProperty Name="Tài_Khoản" ColumnName="Tài Khoản" />
+          <ScalarProperty Name="Mật_Khẩu" ColumnName="Mật Khẩu" />
+          <ScalarProperty Name="Mã_Nhân_Viên" ColumnName="Mã Nhân Viên" />
+          <ScalarProperty Name="Quyền_Truy_Cập" ColumnName="Quyền Truy Cập" />
+          <ScalarProperty Name="Ngày_Đăng_Kí" ColumnName="Ngày Đăng Kí" />
+          <ScalarProperty Name="Ngày_Hết_Hạn" ColumnName="Ngày Hết Hạn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_NhanVien">
+      <EntityTypeMapping TypeName="CoffeManagerProjectModel.View_NhanVien">
+        <MappingFragment StoreEntitySet="View_NhanVien">
+          <ScalarProperty Name="Mã_Nhân_Viên" ColumnName="Mã Nhân Viên" />
+          <ScalarProperty Name="Tên_Nhân_Viên" ColumnName="Tên Nhân Viên" />
+          <ScalarProperty Name="Giới_Tính" ColumnName="Giới Tính" />
+          <ScalarProperty Name="Ngày_Sinh" ColumnName="Ngày Sinh" />
+          <ScalarProperty Name="Địa_Chỉ" ColumnName="Địa Chỉ" />
+          <ScalarProperty Name="Số_Điện_Thoại" ColumnName="Số Điện Thoại" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_ThucDon">
+      <EntityTypeMapping TypeName="CoffeManagerProjectModel.View_ThucDon">
+        <MappingFragment StoreEntitySet="View_ThucDon">
+          <ScalarProperty Name="Mã_Đồ_Uống" ColumnName="Mã Đồ Uống" />
+          <ScalarProperty Name="Tên" ColumnName="Tên" />
+          <ScalarProperty Name="Đơn_Vị_Tính" ColumnName="Đơn Vị Tính" />
+          <ScalarProperty Name="Đơn_Giá" ColumnName="Đơn Giá" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="BAOCAOTHEONGAY" FunctionName="CoffeManagerProjectModel.Store.BAOCAOTHEONGAY">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CoffeManagerProjectModel.BAOCAOTHEONGAY_Result">
+          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="CaSo" ColumnName="CaSo" />
+          <ScalarProperty Name="Tong" ColumnName="Tong" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BAOCAOTHEOTHANG" FunctionName="CoffeManagerProjectModel.Store.BAOCAOTHEOTHANG">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CoffeManagerProjectModel.BAOCAOTHEOTHANG_Result">
+          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="CaSo" ColumnName="CaSo" />
+          <ScalarProperty Name="Tong" ColumnName="Tong" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CapNhatCTHD" FunctionName="CoffeManagerProjectModel.Store.CapNhatCTHD" />
+    <FunctionImportMapping FunctionImportName="CapNhatHoaDon" FunctionName="CoffeManagerProjectModel.Store.CapNhatHoaDon" />
+    <FunctionImportMapping FunctionImportName="CapNhatThucDon" FunctionName="CoffeManagerProjectModel.Store.CapNhatThucDon" />
+    <FunctionImportMapping FunctionImportName="countUser" FunctionName="CoffeManagerProjectModel.Store.countUser" />
+    <FunctionImportMapping FunctionImportName="EDITCTHD" FunctionName="CoffeManagerProjectModel.Store.EDITCTHD" />
+    <FunctionImportMapping FunctionImportName="LayDLBCHD" FunctionName="CoffeManagerProjectModel.Store.LayDLBCHD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CoffeManagerProjectModel.LayDLBCHD_Result">
+          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="CaSo" ColumnName="CaSo" />
+          <ScalarProperty Name="Tong" ColumnName="Tong" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LayDLHD" FunctionName="CoffeManagerProjectModel.Store.LayDLHD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CoffeManagerProjectModel.LayDLHD_Result">
+          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+          <ScalarProperty Name="KhuyenMai" ColumnName="KhuyenMai" />
+          <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+          <ScalarProperty Name="CaSo" ColumnName="CaSo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proCapNhatNV" FunctionName="CoffeManagerProjectModel.Store.proCapNhatNV" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="CoffeManagerProjectModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="CoffeManagerProjectModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="CoffeManagerProjectModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="CoffeManagerProjectModel.Store.sp_helpdiagramdefinition" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="CoffeManagerProjectModel.Store.sp_helpdiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="CoffeManagerProjectModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="CoffeManagerProjectModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_nhanvien_id" FunctionName="CoffeManagerProjectModel.Store.sp_nhanvien_id" />
+    <FunctionImportMapping FunctionImportName="sp_hoadon_id" FunctionName="CoffeManagerProjectModel.Store.sp_hoadon_id" />
+  </EntityContainerMapping>
+</Mapping>

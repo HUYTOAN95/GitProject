@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CoffeManagerProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tbl_ChitietHD">
+    <Key>
+      <PropertyRef Name="MaHD" />
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaHD" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="MaSP" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="DonGia" Type="int" />
+    <Property Name="ThanhTien" Type="int" />
+    <Property Name="KhuyenMai" Type="float" />
+  </EntityType>
+  <EntityType Name="tbl_HoaDon">
+    <Key>
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaHD" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="MaNV" Type="varchar" MaxLength="6" />
+    <Property Name="NgayCapNhat" Type="date" />
+    <Property Name="CaSo" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_NgSD">
+    <Key>
+      <PropertyRef Name="TaiKhoan" />
+    </Key>
+    <Property Name="TaiKhoan" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MatKhau" Type="varchar" MaxLength="200" />
+    <Property Name="MaNV" Type="varchar" MaxLength="6" />
+    <Property Name="QuyenTruyCap" Type="nchar" MaxLength="10" />
+    <Property Name="NgayDangKi" Type="date" />
+    <Property Name="NgayHetHan" Type="date" />
+  </EntityType>
+  <EntityType Name="tbl_NhanVien">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="TenNV" Type="nvarchar" MaxLength="50" />
+    <Property Name="GioiTinh" Type="nchar" MaxLength="4" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+    <Property Name="SDT" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_ThucDon">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
+    <Property Name="DVT" Type="nvarchar" MaxLength="10" />
+    <Property Name="DonGia" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CoffeManagerProject.dbo.View_BaoCaoHoaDon' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_BaoCaoHoaDon">
+    <Key>
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaHD" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
+    <Property Name="DonGia" Type="int" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="ThanhTien" Type="int" />
+    <Property Name="TongTien" Type="int" />
+    <Property Name="KhuyenMai" Type="float" />
+    <Property Name="MaNV" Type="varchar" MaxLength="6" />
+    <Property Name="NgayCapNhat" Type="date" />
+    <Property Name="TenNV" Type="nvarchar" MaxLength="50" />
+    <Property Name="CaSo" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CoffeManagerProject.dbo.View_CTHD_HD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_CTHD_HD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Tên Món" Type="nvarchar" MaxLength="50" />
+    <Property Name="Số Lượng" Type="int" />
+    <Property Name="Đơn Giá" Type="int" />
+    <Property Name="Giảm Giá" Type="float" />
+    <Property Name="Thành Tiền" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CoffeManagerProject.dbo.View_ChiTietHD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_ChiTietHD">
+    <Key>
+      <PropertyRef Name="Mã Hóa Đơn" />
+      <PropertyRef Name="Sản Phẩm" />
+    </Key>
+    <Property Name="Mã Hóa Đơn" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Sản Phẩm" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="Số Lượng" Type="int" />
+    <Property Name="Đơn Giá" Type="int" />
+    <Property Name="Thành Tiền" Type="int" />
+    <Property Name="Khuyến Mãi" Type="float" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CoffeManagerProject.dbo.View_HD_NV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_HD_NV">
+    <Key>
+      <PropertyRef Name="Mã Hóa Đơn" />
+    </Key>
+    <Property Name="Mã Hóa Đơn" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Mã Nhân Viên" Type="varchar" MaxLength="6" />
+    <Property Name="Tên Nhân Viên" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ngày Cập Nhật" Type="date" />
+    <Property Name="Ca Số" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CoffeManagerProject.dbo.View_HoaDon' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_HoaDon">
+    <Key>
+      <PropertyRef Name="Mã Hóa Đơn" />
+    </Key>
+    <Property Name="Mã Hóa Đơn" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Mã Nhân Viên" Type="varchar" MaxLength="6" />
+    <Property Name="Ngày Cập Nhật" Type="date" />
+    <Property Name="Ca Số" Type="int" />
+    <Property Name="Tổng Tiền" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CoffeManagerProject.dbo.View_NgSD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_NgSD">
+    <Key>
+      <PropertyRef Name="Tài Khoản" />
+    </Key>
+    <Property Name="Tài Khoản" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Mật Khẩu" Type="nchar" MaxLength="20" />
+    <Property Name="Mã Nhân Viên" Type="varchar" MaxLength="6" />
+    <Property Name="Quyền Truy Cập" Type="nchar" MaxLength="10" />
+    <Property Name="Ngày Đăng Kí" Type="date" />
+    <Property Name="Ngày Hết Hạn" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CoffeManagerProject.dbo.View_NhanVien' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_NhanVien">
+    <Key>
+      <PropertyRef Name="Mã Nhân Viên" />
+    </Key>
+    <Property Name="Mã Nhân Viên" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="Tên Nhân Viên" Type="nvarchar" MaxLength="50" />
+    <Property Name="Giới Tính" Type="nchar" MaxLength="10" />
+    <Property Name="Ngày Sinh" Type="date" />
+    <Property Name="Địa Chỉ" Type="nvarchar" MaxLength="50" />
+    <Property Name="Số Điện Thoại" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CoffeManagerProject.dbo.View_ThucDon' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_ThucDon">
+    <Key>
+      <PropertyRef Name="Mã Đồ Uống" />
+    </Key>
+    <Property Name="Mã Đồ Uống" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tên" Type="nvarchar" MaxLength="50" />
+    <Property Name="Đơn Vị Tính" Type="nvarchar" MaxLength="10" />
+    <Property Name="Đơn Giá" Type="int" />
+  </EntityType>
+  <Association Name="FK_tbl_ChitietHD_tbl_HoaDon">
+    <End Role="tbl_HoaDon" Type="Self.tbl_HoaDon" Multiplicity="1" />
+    <End Role="tbl_ChitietHD" Type="Self.tbl_ChitietHD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_HoaDon">
+        <PropertyRef Name="MaHD" />
+      </Principal>
+      <Dependent Role="tbl_ChitietHD">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ChitietHD_tbl_ThucDon">
+    <End Role="tbl_ThucDon" Type="Self.tbl_ThucDon" Multiplicity="1" />
+    <End Role="tbl_ChitietHD" Type="Self.tbl_ChitietHD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ThucDon">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_ChitietHD">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="AUTO_IDHD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar" />
+  <Function Name="BAOCAOTHEONGAY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="thang" Type="int" Mode="In" />
+    <Parameter Name="nam" Type="int" Mode="In" />
+    <Parameter Name="ngay" Type="int" Mode="In" />
+  </Function>
+  <Function Name="BAOCAOTHEOTHANG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="thang" Type="int" Mode="In" />
+    <Parameter Name="nam" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CapNhatCTHD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHD" Type="varchar" Mode="In" />
+    <Parameter Name="MaSP" Type="varchar" Mode="In" />
+    <Parameter Name="Soluong" Type="int" Mode="In" />
+    <Parameter Name="DonGia" Type="int" Mode="In" />
+    <Parameter Name="KM" Type="float" Mode="In" />
+  </Function>
+  <Function Name="CapNhatHoaDon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHD" Type="varchar" Mode="In" />
+    <Parameter Name="MaNV" Type="varchar" Mode="In" />
+    <Parameter Name="NgayCapNhat" Type="date" Mode="In" />
+    <Parameter Name="SoCa" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CapNhatThucDon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="varchar" Mode="In" />
+    <Parameter Name="Ten" Type="nvarchar" Mode="In" />
+    <Parameter Name="DonGia" Type="int" Mode="In" />
+    <Parameter Name="DVT" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="countUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="EDITCTHD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHD" Type="varchar" Mode="In" />
+    <Parameter Name="MaSP" Type="varchar" Mode="In" />
+    <Parameter Name="Soluong" Type="int" Mode="In" />
+    <Parameter Name="DonGia" Type="int" Mode="In" />
+    <Parameter Name="KM" Type="float" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="func_NextHD_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+    <Parameter Name="lastUserID" Type="varchar" Mode="In" />
+    <Parameter Name="prefix" Type="varchar" Mode="In" />
+    <Parameter Name="size" Type="int" Mode="In" />
+  </Function>
+  <Function Name="FuncNext_MaNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+    <Parameter Name="lastUserID" Type="varchar" Mode="In" />
+    <Parameter Name="prefix" Type="varchar" Mode="In" />
+    <Parameter Name="size" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LayDLBCHD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Thang" Type="int" Mode="In" />
+    <Parameter Name="Nam" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LayDLHD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHD" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proCapNhatNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaNV" Type="varchar" Mode="In" />
+    <Parameter Name="TenNV" Type="nvarchar" Mode="In" />
+    <Parameter Name="GioiTinh" Type="nchar" Mode="In" />
+    <Parameter Name="NgaySinh" Type="date" Mode="In" />
+    <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
+    <Parameter Name="SDT" Type="text" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_hoadon_id" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_nhanvien_id" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="CoffeManagerProjectModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ChitietHD" EntityType="Self.tbl_ChitietHD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_HoaDon" EntityType="Self.tbl_HoaDon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_NgSD" EntityType="Self.tbl_NgSD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_NhanVien" EntityType="Self.tbl_NhanVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ThucDon" EntityType="Self.tbl_ThucDon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="View_BaoCaoHoaDon" EntityType="Self.View_BaoCaoHoaDon" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_BaoCaoHoaDon].[MaHD] AS [MaHD], 
+[View_BaoCaoHoaDon].[Ten] AS [Ten], 
+[View_BaoCaoHoaDon].[DonGia] AS [DonGia], 
+[View_BaoCaoHoaDon].[SoLuong] AS [SoLuong], 
+[View_BaoCaoHoaDon].[ThanhTien] AS [ThanhTien], 
+[View_BaoCaoHoaDon].[TongTien] AS [TongTien], 
+[View_BaoCaoHoaDon].[KhuyenMai] AS [KhuyenMai], 
+[View_BaoCaoHoaDon].[MaNV] AS [MaNV], 
+[View_BaoCaoHoaDon].[NgayCapNhat] AS [NgayCapNhat], 
+[View_BaoCaoHoaDon].[TenNV] AS [TenNV], 
+[View_BaoCaoHoaDon].[CaSo] AS [CaSo]
+FROM [dbo].[View_BaoCaoHoaDon] AS [View_BaoCaoHoaDon]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_CTHD_HD" EntityType="Self.View_CTHD_HD" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_CTHD_HD].[ID] AS [ID], 
+[View_CTHD_HD].[Tên Món] AS [Tên Món], 
+[View_CTHD_HD].[Số Lượng] AS [Số Lượng], 
+[View_CTHD_HD].[Đơn Giá] AS [Đơn Giá], 
+[View_CTHD_HD].[Giảm Giá] AS [Giảm Giá], 
+[View_CTHD_HD].[Thành Tiền] AS [Thành Tiền]
+FROM [dbo].[View_CTHD_HD] AS [View_CTHD_HD]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_ChiTietHD" EntityType="Self.View_ChiTietHD" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_ChiTietHD].[Mã Hóa Đơn] AS [Mã Hóa Đơn], 
+[View_ChiTietHD].[Sản Phẩm] AS [Sản Phẩm], 
+[View_ChiTietHD].[Số Lượng] AS [Số Lượng], 
+[View_ChiTietHD].[Đơn Giá] AS [Đơn Giá], 
+[View_ChiTietHD].[Thành Tiền] AS [Thành Tiền], 
+[View_ChiTietHD].[Khuyến Mãi] AS [Khuyến Mãi]
+FROM [dbo].[View_ChiTietHD] AS [View_ChiTietHD]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_HD_NV" EntityType="Self.View_HD_NV" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_HD_NV].[Mã Hóa Đơn] AS [Mã Hóa Đơn], 
+[View_HD_NV].[Mã Nhân Viên] AS [Mã Nhân Viên], 
+[View_HD_NV].[Tên Nhân Viên] AS [Tên Nhân Viên], 
+[View_HD_NV].[Ngày Cập Nhật] AS [Ngày Cập Nhật], 
+[View_HD_NV].[Ca Số] AS [Ca Số]
+FROM [dbo].[View_HD_NV] AS [View_HD_NV]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_HoaDon" EntityType="Self.View_HoaDon" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_HoaDon].[Mã Hóa Đơn] AS [Mã Hóa Đơn], 
+[View_HoaDon].[Mã Nhân Viên] AS [Mã Nhân Viên], 
+[View_HoaDon].[Ngày Cập Nhật] AS [Ngày Cập Nhật], 
+[View_HoaDon].[Ca Số] AS [Ca Số], 
+[View_HoaDon].[Tổng Tiền] AS [Tổng Tiền]
+FROM [dbo].[View_HoaDon] AS [View_HoaDon]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_NgSD" EntityType="Self.View_NgSD" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_NgSD].[Tài Khoản] AS [Tài Khoản], 
+[View_NgSD].[Mật Khẩu] AS [Mật Khẩu], 
+[View_NgSD].[Mã Nhân Viên] AS [Mã Nhân Viên], 
+[View_NgSD].[Quyền Truy Cập] AS [Quyền Truy Cập], 
+[View_NgSD].[Ngày Đăng Kí] AS [Ngày Đăng Kí], 
+[View_NgSD].[Ngày Hết Hạn] AS [Ngày Hết Hạn]
+FROM [dbo].[View_NgSD] AS [View_NgSD]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_NhanVien" EntityType="Self.View_NhanVien" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_NhanVien].[Mã Nhân Viên] AS [Mã Nhân Viên], 
+[View_NhanVien].[Tên Nhân Viên] AS [Tên Nhân Viên], 
+[View_NhanVien].[Giới Tính] AS [Giới Tính], 
+[View_NhanVien].[Ngày Sinh] AS [Ngày Sinh], 
+[View_NhanVien].[Địa Chỉ] AS [Địa Chỉ], 
+[View_NhanVien].[Số Điện Thoại] AS [Số Điện Thoại]
+FROM [dbo].[View_NhanVien] AS [View_NhanVien]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_ThucDon" EntityType="Self.View_ThucDon" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_ThucDon].[Mã Đồ Uống] AS [Mã Đồ Uống], 
+[View_ThucDon].[Tên] AS [Tên], 
+[View_ThucDon].[Đơn Vị Tính] AS [Đơn Vị Tính], 
+[View_ThucDon].[Đơn Giá] AS [Đơn Giá]
+FROM [dbo].[View_ThucDon] AS [View_ThucDon]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_tbl_ChitietHD_tbl_HoaDon" Association="Self.FK_tbl_ChitietHD_tbl_HoaDon">
+      <End Role="tbl_HoaDon" EntitySet="tbl_HoaDon" />
+      <End Role="tbl_ChitietHD" EntitySet="tbl_ChitietHD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ChitietHD_tbl_ThucDon" Association="Self.FK_tbl_ChitietHD_tbl_ThucDon">
+      <End Role="tbl_ThucDon" EntitySet="tbl_ThucDon" />
+      <End Role="tbl_ChitietHD" EntitySet="tbl_ChitietHD" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

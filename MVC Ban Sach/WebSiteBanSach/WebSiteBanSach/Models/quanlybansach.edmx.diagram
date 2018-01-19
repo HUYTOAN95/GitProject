@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bead2a55c5764fe08e64d6d59eee4be1" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyThuVienModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuVienModel.tbl_ChiTietPhieuMuon" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuVienModel.tbl_DocGia" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuVienModel.tbl_LoaiSach" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuVienModel.tbl_NhanVien" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuVienModel.tbl_NhaXB" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuVienModel.tbl_PhieuMuonTra" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuVienModel.tbl_Sach" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuVienModel.tbl_TacGia" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuVienModel.tbl_TaiKhoan" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuVienModel.tbl_ViTri" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyThuVienModel.FK_tbl_ChiTietPhieuMuon_tbl_PhieuMuonTra" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThuVienModel.FK_tbl_ChiTietPhieuMuon_tbl_Sach" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThuVienModel.FK_tbl_PhieuMuonTra_tbl_DocGia" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThuVienModel.FK_tbl_Sach_tbl_LoaiSach" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThuVienModel.FK_tbl_PhieuMuonTra_tbl_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThuVienModel.FK_tbl_TaiKhoan_tbl_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThuVienModel.FK_tbl_Sach_tbl_NhaXB" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThuVienModel.FK_tbl_Sach_tbl_ViTri" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThuVienModel.tbl_Sach_TG" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
