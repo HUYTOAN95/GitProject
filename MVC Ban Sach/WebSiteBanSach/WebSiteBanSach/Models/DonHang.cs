@@ -14,10 +14,9 @@ namespace WebSiteBanSach.Models
     
     public partial class DonHang
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DonHang()
         {
-            this.ChiTietDonHang = new HashSet<ChiTietDonHang>();
+            this.ChiTietDonHangs = new HashSet<ChiTietDonHang>();
         }
     
         public int MaDonHang { get; set; }
@@ -27,8 +26,7 @@ namespace WebSiteBanSach.Models
         public Nullable<int> TinhTrangGiaoHang { get; set; }
         public Nullable<int> MaKH { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietDonHang> ChiTietDonHang { get; set; }
+        public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; }
         public virtual KhachHang KhachHang { get; set; }
     }
 }

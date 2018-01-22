@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Admin.Models.tbl_NgSD>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+}
+
+
+<h2>Quản Lý Người Sử Dụng </h2>
+
+<p>
+    @Html.ActionLink("Thêm Mới ", "ThemMoi")
+</p>
+<table class="table" style="background-color:yellowgreen">
+
+    <tr style="background-color:gray"> 
+        <th>
+            Tài Khoản
+
+        </th>
+        <th>
+            Mật Khẩu 
+          
+        </th>
+        <th>
+           Mã Nhân Viên 
+        </th>
+        <th>
+          Quyền Truy Cập
+        </th>
+        <th>
+           Ngày Đăng Kí
+        </th>
+        <th>
+            Ngày Hết Hạn
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaiKhoan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MatKhau)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuyenTruyCap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayDangKi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayHetHan)
+        </td>
+        <td>
+            @Html.ActionLink("Chỉnh Sửa", "ChinhSua", new { @TaiKhoan=item.TaiKhoan }) |
+            @Html.ActionLink("Thông Tin", "Details", new { @TaiKhoan = item.TaiKhoan }) |
+            @Html.ActionLink("Xóa", "Delete", new { @TaiKhoan = item.TaiKhoan })
+        </td>
+    </tr>
+}
+    
+</table>

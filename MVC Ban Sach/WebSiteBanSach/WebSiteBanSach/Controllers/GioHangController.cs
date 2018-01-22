@@ -25,7 +25,7 @@ namespace WebSiteBanSach.Controllers
         //Thêm giỏ hàng
         public ActionResult ThemGioHang(int iMaSach, string strURL)
         {
-            Sach sach = db.Sach.SingleOrDefault(n=>n.MaSach==iMaSach);
+            Sach sach = db.Saches.SingleOrDefault(n=>n.MaSach==iMaSach);
             if(sach==null)
             {
                 Response.StatusCode=404;
@@ -52,7 +52,7 @@ namespace WebSiteBanSach.Controllers
         public ActionResult CapNhatGioHang(int iMaSP, FormCollection f)
         {
             //Kiểm tra masp
-            Sach sach = db.Sach.SingleOrDefault(n => n.MaSach == iMaSP);
+            Sach sach = db.Saches.SingleOrDefault(n => n.MaSach == iMaSP);
             //Nếu get sai masp thì sẽ trả về trang lỗi 404
             if (sach == null)
             {
@@ -75,7 +75,7 @@ namespace WebSiteBanSach.Controllers
         public ActionResult XoaGioHang(int iMaSP)
         {
             //Kiểm tra masp
-            Sach sach = db.Sach.SingleOrDefault(n => n.MaSach == iMaSP);
+            Sach sach = db.Saches.SingleOrDefault(n => n.MaSach == iMaSP);
             //Nếu get sai masp thì sẽ trả về trang lỗi 404
             if (sach == null)
             {
@@ -174,7 +174,7 @@ namespace WebSiteBanSach.Controllers
             List<GioHang> gh = LayGioHang();
             ddh.MaKH = kh.MaKH;
             ddh.NgayDat = DateTime.Now;
-            db.DonHang.Add(ddh);
+            db.DonHangs.Add(ddh);
             db.SaveChanges();
             //Thêm chi tiết đơn hàng
             foreach (var item in gh)
@@ -184,7 +184,7 @@ namespace WebSiteBanSach.Controllers
                 ctDH.MaSach = item.iMaSach;
                 ctDH.SoLuong = item.iSoLuong;
                 ctDH.DonGia =(decimal)item.dDonGia;
-                db.ChiTietDonHang.Add(ctDH);
+                db.ChiTietDonHangs.Add(ctDH);
             }
             db.SaveChanges();
             return RedirectToAction("Index","Home");

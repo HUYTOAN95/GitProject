@@ -14,10 +14,9 @@ namespace WebSiteBanSach.Models
     
     public partial class KhachHang
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KhachHang()
         {
-            this.DonHang = new HashSet<DonHang>();
+            this.DonHangs = new HashSet<DonHang>();
         }
     
         public int MaKH { get; set; }
@@ -30,7 +29,6 @@ namespace WebSiteBanSach.Models
         public string Email { get; set; }
         public string DiaChi { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DonHang> DonHang { get; set; }
+        public virtual ICollection<DonHang> DonHangs { get; set; }
     }
 }

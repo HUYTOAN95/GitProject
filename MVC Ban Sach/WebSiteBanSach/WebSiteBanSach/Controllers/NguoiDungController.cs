@@ -29,7 +29,7 @@ namespace WebSiteBanSach.Controllers
             if (ModelState.IsValid)
             {
                 //Chèn dữ liệu vào bảng khách hàng
-                db.KhachHang.Add(kh);
+                db.KhachHangs.Add(kh);
                 //Lưu vào csdl 
                 db.SaveChanges();
             }
@@ -46,7 +46,7 @@ namespace WebSiteBanSach.Controllers
         {
             string sTaiKhoan = f["txtTaiKhoan"].ToString();
             string sMatKhau = f.Get("txtMatKhau").ToString();
-            KhachHang kh = db.KhachHang.SingleOrDefault(n => n.TaiKhoan == sTaiKhoan && n.MatKhau == sMatKhau);
+            KhachHang kh = db.KhachHangs.SingleOrDefault(n => n.TaiKhoan == sTaiKhoan && n.MatKhau == sMatKhau);
             if (kh != null)
             {
                 ViewBag.ThongBao = "Chúc mừng bạn đăng nhập thành công !";

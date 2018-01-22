@@ -178,45 +178,45 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ChiTietDonHang.cs">
-      <DependentUpon>qlbs.tt</DependentUpon>
+      <DependentUpon>QuanLy BanSach.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ChuDe.cs">
-      <DependentUpon>qlbs.tt</DependentUpon>
+      <DependentUpon>QuanLy BanSach.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DonHang.cs">
-      <DependentUpon>qlbs.tt</DependentUpon>
+      <DependentUpon>QuanLy BanSach.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\KhachHang.cs">
-      <DependentUpon>qlbs.tt</DependentUpon>
+      <DependentUpon>QuanLy BanSach.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Metadata\Sach.metadata.cs" />
     <Compile Include="Models\NhaXuatBan.cs">
-      <DependentUpon>qlbs.tt</DependentUpon>
+      <DependentUpon>QuanLy BanSach.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\qlbs.Context.cs">
+    <Compile Include="Models\QuanLy BanSach.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>qlbs.Context.tt</DependentUpon>
+      <DependentUpon>QuanLy BanSach.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\qlbs.cs">
+    <Compile Include="Models\QuanLy BanSach.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>qlbs.tt</DependentUpon>
+      <DependentUpon>QuanLy BanSach.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\qlbs.Designer.cs">
+    <Compile Include="Models\QuanLy BanSach.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>qlbs.edmx</DependentUpon>
+      <DependentUpon>QuanLy BanSach.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Sach.cs">
-      <DependentUpon>qlbs.tt</DependentUpon>
+      <DependentUpon>QuanLy BanSach.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TacGia.cs">
-      <DependentUpon>qlbs.tt</DependentUpon>
+      <DependentUpon>QuanLy BanSach.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ThamGia.cs">
-      <DependentUpon>qlbs.tt</DependentUpon>
+      <DependentUpon>QuanLy BanSach.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -511,22 +511,22 @@
     <Content Include="Content\TemplateAdmin\font\glyphiconshalflings-regular.ttf" />
     <Content Include="Content\TemplateAdmin\font\glyphiconshalflings-regular.woff" />
     <Content Include="Content\TemplateAdmin\README.md" />
-    <EntityDeploy Include="Models\qlbs.edmx">
+    <EntityDeploy Include="Models\QuanLy BanSach.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>qlbs.Designer.cs</LastGenOutput>
+      <LastGenOutput>QuanLy BanSach.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\qlbs.Context.tt">
+    <Content Include="Models\QuanLy BanSach.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>qlbs.edmx</DependentUpon>
-      <LastGenOutput>qlbs.Context.cs</LastGenOutput>
+      <DependentUpon>QuanLy BanSach.edmx</DependentUpon>
+      <LastGenOutput>QuanLy BanSach.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\qlbs.edmx.diagram">
-      <DependentUpon>qlbs.edmx</DependentUpon>
+    <Content Include="Models\QuanLy BanSach.edmx.diagram">
+      <DependentUpon>QuanLy BanSach.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\qlbs.tt">
+    <Content Include="Models\QuanLy BanSach.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>qlbs.edmx</DependentUpon>
-      <LastGenOutput>qlbs.cs</LastGenOutput>
+      <DependentUpon>QuanLy BanSach.edmx</DependentUpon>
+      <LastGenOutput>QuanLy BanSach.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

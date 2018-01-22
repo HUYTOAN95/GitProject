@@ -14,10 +14,9 @@ namespace WebSiteBanSach.Models
     
     public partial class TacGia
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TacGia()
         {
-            this.ThamGia = new HashSet<ThamGia>();
+            this.ThamGias = new HashSet<ThamGia>();
         }
     
         public int MaTacGia { get; set; }
@@ -26,7 +25,6 @@ namespace WebSiteBanSach.Models
         public string TieuSu { get; set; }
         public string DienThoai { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThamGia> ThamGia { get; set; }
+        public virtual ICollection<ThamGia> ThamGias { get; set; }
     }
 }

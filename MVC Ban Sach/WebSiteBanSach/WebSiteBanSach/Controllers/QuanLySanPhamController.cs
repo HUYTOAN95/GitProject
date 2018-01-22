@@ -18,15 +18,15 @@ namespace WebSiteBanSach.Controllers
         {
             int pageNumber = (page ?? 1);
             int pageSize = 10;
-            return View(db.Sach.ToList().OrderBy(n=>n.MaSach).ToPagedList(pageNumber,pageSize));
+            return View(db.Saches.ToList().OrderBy(n=>n.MaSach).ToPagedList(pageNumber,pageSize));
         }
         //Thêm mới 
         [HttpGet]
         public ActionResult ThemMoi()
         {
             //Đưa dữ liệu vào dropdownlist
-            ViewBag.MaChuDe = new SelectList( db.ChuDe.ToList().OrderBy(n=>n.TenChuDe),"MaChuDe","TenChuDe");
-            ViewBag.MaNXB = new SelectList(db.NhaXuatBan.ToList().OrderBy(n=>n.TenNXB), "MaNXB", "TenNXB"); ;
+            ViewBag.MaChuDe = new SelectList( db.ChuDes.ToList().OrderBy(n=>n.TenChuDe),"MaChuDe","TenChuDe");
+            ViewBag.MaNXB = new SelectList(db.NhaXuatBans.ToList().OrderBy(n=>n.TenNXB), "MaNXB", "TenNXB"); ;
             return View();
         }
         [HttpPost]
@@ -36,8 +36,8 @@ namespace WebSiteBanSach.Controllers
 
                 
                 //Đưa dữ liệu vào dropdownlist
-                ViewBag.MaChuDe = new SelectList(db.ChuDe.ToList().OrderBy(n => n.TenChuDe), "MaChuDe", "TenChuDe");
-                ViewBag.MaNXB = new SelectList(db.NhaXuatBan.ToList().OrderBy(n => n.TenNXB), "MaNXB", "TenNXB");
+                ViewBag.MaChuDe = new SelectList(db.ChuDes.ToList().OrderBy(n => n.TenChuDe), "MaChuDe", "TenChuDe");
+                ViewBag.MaNXB = new SelectList(db.NhaXuatBans.ToList().OrderBy(n => n.TenNXB), "MaNXB", "TenNXB");
                 //kiểm tra đường dẫn ảnh bìa
                 if (fileUpload == null)
                 {
@@ -61,7 +61,7 @@ namespace WebSiteBanSach.Controllers
                         fileUpload.SaveAs(path);
                     }
                     sach.AnhBia = fileUpload.FileName;
-                    db.Sach.Add(sach);
+                    db.Saches.Add(sach);
                     db.SaveChanges();
                 }
                 return View();
@@ -71,15 +71,15 @@ namespace WebSiteBanSach.Controllers
         public ActionResult ChinhSua(int MaSach)
         {
             //Lấy ra đối tượng sách theo mã 
-            Sach sach = db.Sach.SingleOrDefault(n => n.MaSach == MaSach);
+            Sach sach = db.Saches.SingleOrDefault(n => n.MaSach == MaSach);
             if (sach == null)
             {
                 Response.StatusCode = 404;
                 return null;
             }
             //Đưa dữ liệu vào dropdownlist
-            ViewBag.MaChuDe = new SelectList(db.ChuDe.ToList().OrderBy(n => n.TenChuDe), "MaChuDe", "TenChuDe",sach.MaChuDe);
-            ViewBag.MaNXB = new SelectList(db.NhaXuatBan.ToList().OrderBy(n => n.TenNXB), "MaNXB", "TenNXB",sach.MaNXB);
+            ViewBag.MaChuDe = new SelectList(db.ChuDes.ToList().OrderBy(n => n.TenChuDe), "MaChuDe", "TenChuDe",sach.MaChuDe);
+            ViewBag.MaNXB = new SelectList(db.NhaXuatBans.ToList().OrderBy(n => n.TenNXB), "MaNXB", "TenNXB",sach.MaNXB);
             return View(sach);
         }
         [HttpPost]
@@ -102,8 +102,8 @@ namespace WebSiteBanSach.Controllers
                 db.SaveChanges();
             }
             //Đưa dữ liệu vào dropdownlist
-            ViewBag.MaChuDe = new SelectList(db.ChuDe.ToList().OrderBy(n => n.TenChuDe), "MaChuDe", "TenChuDe", sach.MaChuDe);
-            ViewBag.MaNXB = new SelectList(db.NhaXuatBan.ToList().OrderBy(n => n.TenNXB), "MaNXB", "TenNXB", sach.MaNXB);
+            ViewBag.MaChuDe = new SelectList(db.ChuDes.ToList().OrderBy(n => n.TenChuDe), "MaChuDe", "TenChuDe", sach.MaChuDe);
+            ViewBag.MaNXB = new SelectList(db.NhaXuatBans.ToList().OrderBy(n => n.TenNXB), "MaNXB", "TenNXB", sach.MaNXB);
 
             return RedirectToAction("Index");
         
@@ -113,7 +113,7 @@ namespace WebSiteBanSach.Controllers
         {
 
             //Lấy ra đối tượng sách theo mã 
-            Sach sach = db.Sach.SingleOrDefault(n => n.MaSach == MaSach);
+            Sach sach = db.Saches.SingleOrDefault(n => n.MaSach == MaSach);
             if (sach == null)
             {
                 Response.StatusCode = 404;
@@ -128,7 +128,7 @@ namespace WebSiteBanSach.Controllers
         public ActionResult Xoa(int MaSach)
         {
             //Lấy ra đối tượng sách theo mã 
-            Sach sach = db.Sach.SingleOrDefault(n => n.MaSach == MaSach);
+            Sach sach = db.Saches.SingleOrDefault(n => n.MaSach == MaSach);
             if (sach == null)
             {
                 Response.StatusCode = 404;
@@ -141,13 +141,13 @@ namespace WebSiteBanSach.Controllers
 
         public ActionResult XacNhanXoa(int MaSach)
         {
-            Sach sach = db.Sach.SingleOrDefault(n => n.MaSach == MaSach);
+            Sach sach = db.Saches.SingleOrDefault(n => n.MaSach == MaSach);
             if (sach == null)
             {
                 Response.StatusCode = 404;
                 return null;
             }
-            db.Sach.Remove(sach);
+            db.Saches.Remove(sach);
             db.SaveChanges();
             return RedirectToAction("Index");
         

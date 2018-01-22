@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CoffeManagerProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tbl_ChitietHD">
+    <Key>
+      <PropertyRef Name="MaHD" />
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaHD" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaSP" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="DonGia" Type="int" />
+    <Property Name="ThanhTien" Type="int" />
+    <Property Name="KhuyenMai" Type="float" />
+  </EntityType>
+  <EntityType Name="tbl_HoaDon">
+    <Key>
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaHD" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaNV" Type="varchar" MaxLength="6" />
+    <Property Name="TongTien" Type="int" />
+    <Property Name="NgayCapNhat" Type="date" />
+    <Property Name="CaSo" Type="int" />
+    <Property Name="Tong" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_NgSD">
+    <Key>
+      <PropertyRef Name="TaiKhoan" />
+    </Key>
+    <Property Name="TaiKhoan" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="MatKhau" Type="nchar" MaxLength="20" />
+    <Property Name="MaNV" Type="varchar" MaxLength="6" />
+    <Property Name="QuyenTruyCap" Type="nchar" MaxLength="10" />
+    <Property Name="NgayDangKi" Type="date" />
+    <Property Name="NgayHetHan" Type="date" />
+  </EntityType>
+  <EntityType Name="tbl_NhanVien">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="TenNV" Type="nvarchar" MaxLength="50" />
+    <Property Name="GioiTinh" Type="nchar" MaxLength="10" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+    <Property Name="SDT" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tbl_ThucDon">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
+    <Property Name="DVT" Type="nvarchar" MaxLength="10" />
+    <Property Name="DonGia" Type="int" />
+  </EntityType>
+  <Association Name="FK_tbl_ChitietHD_tbl_HoaDon">
+    <End Role="tbl_HoaDon" Type="Self.tbl_HoaDon" Multiplicity="1" />
+    <End Role="tbl_ChitietHD" Type="Self.tbl_ChitietHD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_HoaDon">
+        <PropertyRef Name="MaHD" />
+      </Principal>
+      <Dependent Role="tbl_ChitietHD">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ChitietHD_tbl_ThucDon">
+    <End Role="tbl_ThucDon" Type="Self.tbl_ThucDon" Multiplicity="1" />
+    <End Role="tbl_ChitietHD" Type="Self.tbl_ChitietHD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ThucDon">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_ChitietHD">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_HoaDon_tbl_NhanVien">
+    <End Role="tbl_NhanVien" Type="Self.tbl_NhanVien" Multiplicity="0..1" />
+    <End Role="tbl_HoaDon" Type="Self.tbl_HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_NhanVien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="tbl_HoaDon">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CoffeManagerProjectModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ChitietHD" EntityType="Self.tbl_ChitietHD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_HoaDon" EntityType="Self.tbl_HoaDon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_NgSD" EntityType="Self.tbl_NgSD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_NhanVien" EntityType="Self.tbl_NhanVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ThucDon" EntityType="Self.tbl_ThucDon" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tbl_ChitietHD_tbl_HoaDon" Association="Self.FK_tbl_ChitietHD_tbl_HoaDon">
+      <End Role="tbl_HoaDon" EntitySet="tbl_HoaDon" />
+      <End Role="tbl_ChitietHD" EntitySet="tbl_ChitietHD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ChitietHD_tbl_ThucDon" Association="Self.FK_tbl_ChitietHD_tbl_ThucDon">
+      <End Role="tbl_ThucDon" EntitySet="tbl_ThucDon" />
+      <End Role="tbl_ChitietHD" EntitySet="tbl_ChitietHD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_HoaDon_tbl_NhanVien" Association="Self.FK_tbl_HoaDon_tbl_NhanVien">
+      <End Role="tbl_NhanVien" EntitySet="tbl_NhanVien" />
+      <End Role="tbl_HoaDon" EntitySet="tbl_HoaDon" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

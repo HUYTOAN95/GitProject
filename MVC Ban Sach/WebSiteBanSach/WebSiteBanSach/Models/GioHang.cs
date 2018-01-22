@@ -27,7 +27,7 @@ namespace WebSiteBanSach.Models
         public GioHang(int MaSach)
         {
             iMaSach = MaSach;
-            Sach sach = db.Sach.Single(n => n.MaSach == iMaSach);
+            Sach sach = db.Saches.Single(n => n.MaSach == iMaSach);
             sTenSach = sach.TenSach;
             sAnhBia = sach.AnhBia;
             dDonGia = double.Parse(sach.GiaBan.ToString());

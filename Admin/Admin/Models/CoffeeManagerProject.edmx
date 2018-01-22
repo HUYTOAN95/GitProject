@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CoffeManagerProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tbl_ChitietHD">
+          <Key>
+            <PropertyRef Name="MaHD" />
+            <PropertyRef Name="MaSP" />
+          </Key>
+          <Property Name="MaHD" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaSP" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="SoLuong" Type="int" />
+          <Property Name="DonGia" Type="int" />
+          <Property Name="ThanhTien" Type="int" />
+          <Property Name="KhuyenMai" Type="float" />
+        </EntityType>
+        <EntityType Name="tbl_HoaDon">
+          <Key>
+            <PropertyRef Name="MaHD" />
+          </Key>
+          <Property Name="MaHD" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaNV" Type="varchar" MaxLength="6" />
+          <Property Name="TongTien" Type="int" />
+          <Property Name="NgayCapNhat" Type="date" />
+          <Property Name="CaSo" Type="int" />
+          <Property Name="Tong" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_NgSD">
+          <Key>
+            <PropertyRef Name="TaiKhoan" />
+          </Key>
+          <Property Name="TaiKhoan" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="MatKhau" Type="nchar" MaxLength="20" />
+          <Property Name="MaNV" Type="varchar" MaxLength="6" />
+          <Property Name="QuyenTruyCap" Type="nchar" MaxLength="10" />
+          <Property Name="NgayDangKi" Type="date" />
+          <Property Name="NgayHetHan" Type="date" />
+        </EntityType>
+        <EntityType Name="tbl_NhanVien">
+          <Key>
+            <PropertyRef Name="MaNV" />
+          </Key>
+          <Property Name="MaNV" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="TenNV" Type="nvarchar" MaxLength="50" />
+          <Property Name="GioiTinh" Type="nchar" MaxLength="10" />
+          <Property Name="NgaySinh" Type="date" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+          <Property Name="SDT" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tbl_ThucDon">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Ten" Type="nvarchar" MaxLength="50" />
+          <Property Name="DVT" Type="nvarchar" MaxLength="10" />
+          <Property Name="DonGia" Type="int" />
+        </EntityType>
+        <Association Name="FK_tbl_ChitietHD_tbl_HoaDon">
+          <End Role="tbl_HoaDon" Type="Self.tbl_HoaDon" Multiplicity="1" />
+          <End Role="tbl_ChitietHD" Type="Self.tbl_ChitietHD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_HoaDon">
+              <PropertyRef Name="MaHD" />
+            </Principal>
+            <Dependent Role="tbl_ChitietHD">
+              <PropertyRef Name="MaHD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ChitietHD_tbl_ThucDon">
+          <End Role="tbl_ThucDon" Type="Self.tbl_ThucDon" Multiplicity="1" />
+          <End Role="tbl_ChitietHD" Type="Self.tbl_ChitietHD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ThucDon">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_ChitietHD">
+              <PropertyRef Name="MaSP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_HoaDon_tbl_NhanVien">
+          <End Role="tbl_NhanVien" Type="Self.tbl_NhanVien" Multiplicity="0..1" />
+          <End Role="tbl_HoaDon" Type="Self.tbl_HoaDon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_NhanVien">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="tbl_HoaDon">
+              <PropertyRef Name="MaNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CoffeManagerProjectModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ChitietHD" EntityType="Self.tbl_ChitietHD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_HoaDon" EntityType="Self.tbl_HoaDon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_NgSD" EntityType="Self.tbl_NgSD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_NhanVien" EntityType="Self.tbl_NhanVien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ThucDon" EntityType="Self.tbl_ThucDon" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tbl_ChitietHD_tbl_HoaDon" Association="Self.FK_tbl_ChitietHD_tbl_HoaDon">
+            <End Role="tbl_HoaDon" EntitySet="tbl_HoaDon" />
+            <End Role="tbl_ChitietHD" EntitySet="tbl_ChitietHD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ChitietHD_tbl_ThucDon" Association="Self.FK_tbl_ChitietHD_tbl_ThucDon">
+            <End Role="tbl_ThucDon" EntitySet="tbl_ThucDon" />
+            <End Role="tbl_ChitietHD" EntitySet="tbl_ChitietHD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_HoaDon_tbl_NhanVien" Association="Self.FK_tbl_HoaDon_tbl_NhanVien">
+            <End Role="tbl_NhanVien" EntitySet="tbl_NhanVien" />
+            <End Role="tbl_HoaDon" EntitySet="tbl_HoaDon" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CoffeManagerProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tbl_ChitietHD">
+          <Key>
+            <PropertyRef Name="MaHD" />
+            <PropertyRef Name="MaSP" />
+          </Key>
+          <Property Name="MaHD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaSP" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SoLuong" Type="Int32" />
+          <Property Name="DonGia" Type="Int32" />
+          <Property Name="ThanhTien" Type="Int32" />
+          <Property Name="KhuyenMai" Type="Double" />
+          <NavigationProperty Name="tbl_HoaDon" Relationship="Self.FK_tbl_ChitietHD_tbl_HoaDon" FromRole="tbl_ChitietHD" ToRole="tbl_HoaDon" />
+          <NavigationProperty Name="tbl_ThucDon" Relationship="Self.FK_tbl_ChitietHD_tbl_ThucDon" FromRole="tbl_ChitietHD" ToRole="tbl_ThucDon" />
+        </EntityType>
+        <EntityType Name="tbl_HoaDon">
+          <Key>
+            <PropertyRef Name="MaHD" />
+          </Key>
+          <Property Name="MaHD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaNV" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="TongTien" Type="Int32" />
+          <Property Name="NgayCapNhat" Type="DateTime" Precision="0" />
+          <Property Name="CaSo" Type="Int32" />
+          <Property Name="Tong" Type="Int32" />
+          <NavigationProperty Name="tbl_ChitietHD" Relationship="Self.FK_tbl_ChitietHD_tbl_HoaDon" FromRole="tbl_HoaDon" ToRole="tbl_ChitietHD" />
+          <NavigationProperty Name="tbl_NhanVien" Relationship="Self.FK_tbl_HoaDon_tbl_NhanVien" FromRole="tbl_HoaDon" ToRole="tbl_NhanVien" />
+        </EntityType>
+        <EntityType Name="tbl_NgSD">
+          <Key>
+            <PropertyRef Name="TaiKhoan" />
+          </Key>
+          <Property Name="TaiKhoan" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="MatKhau" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="MaNV" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="QuyenTruyCap" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="NgayDangKi" Type="DateTime" Precision="0" />
+          <Property Name="NgayHetHan" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="tbl_NhanVien">
+          <Key>
+            <PropertyRef Name="MaNV" />
+          </Key>
+          <Property Name="MaNV" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GioiTinh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+          <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="tbl_HoaDon" Relationship="Self.FK_tbl_HoaDon_tbl_NhanVien" FromRole="tbl_NhanVien" ToRole="tbl_HoaDon" />
+        </EntityType>
+        <EntityType Name="tbl_ThucDon">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DVT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DonGia" Type="Int32" />
+          <NavigationProperty Name="tbl_ChitietHD" Relationship="Self.FK_tbl_ChitietHD_tbl_ThucDon" FromRole="tbl_ThucDon" ToRole="tbl_ChitietHD" />
+        </EntityType>
+        <Association Name="FK_tbl_ChitietHD_tbl_HoaDon">
+          <End Role="tbl_HoaDon" Type="Self.tbl_HoaDon" Multiplicity="1" />
+          <End Role="tbl_ChitietHD" Type="Self.tbl_ChitietHD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_HoaDon">
+              <PropertyRef Name="MaHD" />
+            </Principal>
+            <Dependent Role="tbl_ChitietHD">
+              <PropertyRef Name="MaHD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ChitietHD_tbl_ThucDon">
+          <End Role="tbl_ThucDon" Type="Self.tbl_ThucDon" Multiplicity="1" />
+          <End Role="tbl_ChitietHD" Type="Self.tbl_ChitietHD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ThucDon">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_ChitietHD">
+              <PropertyRef Name="MaSP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_HoaDon_tbl_NhanVien">
+          <End Role="tbl_NhanVien" Type="Self.tbl_NhanVien" Multiplicity="0..1" />
+          <End Role="tbl_HoaDon" Type="Self.tbl_HoaDon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_NhanVien">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="tbl_HoaDon">
+              <PropertyRef Name="MaNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CoffeManagerProjectEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="tbl_ChitietHD" EntityType="Self.tbl_ChitietHD" />
+          <EntitySet Name="tbl_HoaDon" EntityType="Self.tbl_HoaDon" />
+          <EntitySet Name="tbl_NgSD" EntityType="Self.tbl_NgSD" />
+          <EntitySet Name="tbl_NhanVien" EntityType="Self.tbl_NhanVien" />
+          <EntitySet Name="tbl_ThucDon" EntityType="Self.tbl_ThucDon" />
+          <AssociationSet Name="FK_tbl_ChitietHD_tbl_HoaDon" Association="Self.FK_tbl_ChitietHD_tbl_HoaDon">
+            <End Role="tbl_HoaDon" EntitySet="tbl_HoaDon" />
+            <End Role="tbl_ChitietHD" EntitySet="tbl_ChitietHD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ChitietHD_tbl_ThucDon" Association="Self.FK_tbl_ChitietHD_tbl_ThucDon">
+            <End Role="tbl_ThucDon" EntitySet="tbl_ThucDon" />
+            <End Role="tbl_ChitietHD" EntitySet="tbl_ChitietHD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_HoaDon_tbl_NhanVien" Association="Self.FK_tbl_HoaDon_tbl_NhanVien">
+            <End Role="tbl_NhanVien" EntitySet="tbl_NhanVien" />
+            <End Role="tbl_HoaDon" EntitySet="tbl_HoaDon" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CoffeManagerProjectModelStoreContainer" CdmEntityContainer="CoffeManagerProjectEntities">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="CoffeManagerProjectModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ChitietHD">
+            <EntityTypeMapping TypeName="CoffeManagerProjectModel.tbl_ChitietHD">
+              <MappingFragment StoreEntitySet="tbl_ChitietHD">
+                <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+                <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+                <ScalarProperty Name="KhuyenMai" ColumnName="KhuyenMai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_HoaDon">
+            <EntityTypeMapping TypeName="CoffeManagerProjectModel.tbl_HoaDon">
+              <MappingFragment StoreEntitySet="tbl_HoaDon">
+                <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+                <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+                <ScalarProperty Name="CaSo" ColumnName="CaSo" />
+                <ScalarProperty Name="Tong" ColumnName="Tong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_NgSD">
+            <EntityTypeMapping TypeName="CoffeManagerProjectModel.tbl_NgSD">
+              <MappingFragment StoreEntitySet="tbl_NgSD">
+                <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
+                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+                <ScalarProperty Name="QuyenTruyCap" ColumnName="QuyenTruyCap" />
+                <ScalarProperty Name="NgayDangKi" ColumnName="NgayDangKi" />
+                <ScalarProperty Name="NgayHetHan" ColumnName="NgayHetHan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_NhanVien">
+            <EntityTypeMapping TypeName="CoffeManagerProjectModel.tbl_NhanVien">
+              <MappingFragment StoreEntitySet="tbl_NhanVien">
+                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+                <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ThucDon">
+            <EntityTypeMapping TypeName="CoffeManagerProjectModel.tbl_ThucDon">
+              <MappingFragment StoreEntitySet="tbl_ThucDon">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="DVT" ColumnName="DVT" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

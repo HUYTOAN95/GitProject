@@ -20,7 +20,7 @@ namespace WebSiteBanSach.Controllers
             int pageSize = 9;
             //Tạo biến số trang
             int pageNumber = (page ?? 1);
-            return View(db.Sach.Where(n=>n.Moi==1).OrderBy(n=>n.GiaBan).ToPagedList(pageNumber,pageSize));
+            return View(db.Saches.Where(n=>n.Moi==1).OrderBy(n=>n.GiaBan).ToPagedList(pageNumber,pageSize));
         }
        
 	}

@@ -14,16 +14,14 @@ namespace WebSiteBanSach.Models
     
     public partial class ChuDe
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ChuDe()
         {
-            this.Sach = new HashSet<Sach>();
+            this.Saches = new HashSet<Sach>();
         }
     
         public int MaChuDe { get; set; }
         public string TenChuDe { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sach> Sach { get; set; }
+        public virtual ICollection<Sach> Saches { get; set; }
     }
 }

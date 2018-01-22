@@ -93,13 +93,14 @@
         </section>
         @*Div body *@
         <div id="NoiDung">
-            @RenderBody()
+        
 
         </div>
         <div id="divChuDeVaNXB">
             <section>
                 @*Phần chủ đề*@
                 <div id="divChuDe">
+                   
                     @Html.Action("ChuDePartial", "ChuDe")
 
                 </div>
@@ -128,6 +129,9 @@
             </section>
         </div>
         <div style="clear:both"></div>
+        <div>
+            @RenderBody()
+        </div>
         <div>
             <a href="#" class="button button-buy">Chào mừng các bạn đã đến với khóa học trực tuyến MyClass.VN</a>
         </div>

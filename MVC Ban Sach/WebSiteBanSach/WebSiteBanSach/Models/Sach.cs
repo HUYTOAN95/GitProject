@@ -14,11 +14,10 @@ namespace WebSiteBanSach.Models
     
     public partial class Sach
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Sach()
         {
-            this.ChiTietDonHang = new HashSet<ChiTietDonHang>();
-            this.ThamGia = new HashSet<ThamGia>();
+            this.ChiTietDonHangs = new HashSet<ChiTietDonHang>();
+            this.ThamGias = new HashSet<ThamGia>();
         }
     
         public int MaSach { get; set; }
@@ -32,11 +31,9 @@ namespace WebSiteBanSach.Models
         public Nullable<int> MaNXB { get; set; }
         public Nullable<int> Moi { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietDonHang> ChiTietDonHang { get; set; }
+        public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; }
         public virtual ChuDe ChuDe { get; set; }
         public virtual NhaXuatBan NhaXuatBan { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThamGia> ThamGia { get; set; }
+        public virtual ICollection<ThamGia> ThamGias { get; set; }
     }
 }
